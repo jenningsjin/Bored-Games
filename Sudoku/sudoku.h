@@ -13,4 +13,7 @@ class Sudokuclass {
 	bool winning();
 	void printboard();
 
+	void solver(); 
+	//Options: Backtracking, BnB, Exact Cover
+
 };
