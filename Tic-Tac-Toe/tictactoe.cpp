@@ -1,54 +1,51 @@
-#include <iostream>
+#include "tictactoe.h"
 
 using namespace std;
 
-
-struct space{
-	char val;
-	bool fill;
-
-	space() {
-		val = 'n';
-		fill = false;
-	}
-};
-
-class tictactoe {
-private:
-
-
-public:
-	space board[3][3];
-
-	validmove();
-	makemove();
-	victory();
-};
-
-
-
-
-//takes in the board 
-void solvedAI(){
-
-}
-
-int main () {
-	while (victory) {
-		break;
+bool tictactoe::validmove(int x, int y) {
+	if (!board[x-1][y-1].fill) {
+		return false;
 	}
 
-	return 0;
+	if ( 
+		x >= 1 || x < 4 ||
+		y >= 1 || y < 4
+		) {
+		return true;
+	}
+
+	return false;
+}
+
+void tictactoe::makemove(int x, int y, char input) {
+	if (validmove(x,y)) {
+		board[x-1][y-1].val = input;
+		board[x-1][y-1].fill = true;
+	}
+
+	return;
 }
 
 
-
-tictactoe::validmove() {
-
+void tictactoe::printboard(){
+	for (int i=0; i < 3; i++) {
+		for (int j =0; j<3; j++) {
+			cout << board[i][j].val;
+		}
+		cout << '\n';
+	}
 }
 
+bool tictactoe::victory() {
+	return false;
+}
 
 
 int main() {
+	char move;
+	tictactoe game;
+	
+	while (!game.victory()) {
+	}
 	return 0;
 }
