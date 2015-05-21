@@ -14,6 +14,7 @@ bool tictactoe::validmove(int x, int y) {
 		return true;
 	}
 
+	cout << "Make a valid move!" << '\n';
 	return false;
 }
 
@@ -30,7 +31,7 @@ void tictactoe::makemove(int x, int y, char input) {
 void tictactoe::printboard(){
 	for (int i=0; i < 3; i++) {
 		for (int j =0; j<3; j++) {
-			cout << board[i][j].val;
+			cout << board[i][j].val << '|';
 		}
 		cout << '\n';
 	}
